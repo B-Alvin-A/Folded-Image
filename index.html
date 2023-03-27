@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straighten Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <p>Stinger Akali</p>
+        <span class="shadow"></span>
+    </div>
+
+    <script>
+        const img = document.querySelector("ul");
+        const shadow = document.querySelector(".shadow");
+
+        img.addEventListener("click", ()=> {
+            img.classList.toggle("active");
+            shadow.classList.toggle("hide");
+        });
+    </script>
+</body>
+</html>

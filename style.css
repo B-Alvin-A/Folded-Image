@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: #141731;
+}
+
+body, .container, ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    height: 500px;
+    width: 600px;
+}
+
+ul {
+    position: absolute;
+    top: 0;
+    transition: .5s ease;
+    transform: skewX(25deg) rotateX(50deg);
+    cursor: pointer;
+}
+
+ul li {
+    height: 400px;
+    width: 200px;
+    list-style-type: none;
+    transition: .5s;
+    background: url(./img/page.jpg);
+}
+
+ul li:nth-child(odd) {
+    transform: skewY(-30deg);
+}
+
+ul li:nth-child(even) {
+    transform: skewY(30deg);
+}
+
+p {
+    position: absolute;
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #fefea6;
+    bottom: -25%;
+    transition: .5s ease;
+    text-shadow: 0 0 10px #fefea6e0;
+    opacity: 0;
+}
+
+ul.active {
+    transition-delay: .5s;
+    transform: unset;
+}
+
+ul.active li {
+    transform: skewY(0);
+    border: none !important;
+}
+
+ul.active~p {
+    transition-delay: .5s;
+    bottom: 0;
+    opacity: 1;
+}
+
+ul li:nth-child(1) {
+    background-size: cover;
+    background-position: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+ul li:nth-child(2) {
+    background-size: cover;
+    background-position: calc(-200px * 1);
+}
+
+ul li:nth-child(3) {
+    background-size: cover;
+    background-position: calc(-200px * 2);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.shadow {
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.2);
+    transform: skewX(25deg) rotateX(50deg);
+    z-index: -1;
+    top: 10%;
+    transition: .5s;
+}
+
+.hide {
+    transition-delay: .5s;
+    opacity: 0;
+}
